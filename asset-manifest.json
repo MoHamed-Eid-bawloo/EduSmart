@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/EduSmart/static/css/main.ee8a213d.css",
-    "main.js": "/EduSmart/static/js/main.24094db0.js",
+    "main.js": "/EduSmart/static/js/main.d9714754.js",
     "static/js/976.2d861368.chunk.js": "/EduSmart/static/js/976.2d861368.chunk.js",
     "static/js/893.1aad0a0b.chunk.js": "/EduSmart/static/js/893.1aad0a0b.chunk.js",
     "index.html": "/EduSmart/index.html",
     "main.ee8a213d.css.map": "/EduSmart/static/css/main.ee8a213d.css.map",
-    "main.24094db0.js.map": "/EduSmart/static/js/main.24094db0.js.map",
+    "main.d9714754.js.map": "/EduSmart/static/js/main.d9714754.js.map",
     "976.2d861368.chunk.js.map": "/EduSmart/static/js/976.2d861368.chunk.js.map",
     "893.1aad0a0b.chunk.js.map": "/EduSmart/static/js/893.1aad0a0b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ee8a213d.css",
-    "static/js/main.24094db0.js"
+    "static/js/main.d9714754.js"
   ]
 }
