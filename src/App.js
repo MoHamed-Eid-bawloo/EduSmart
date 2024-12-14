@@ -1,23 +1,22 @@
 import React from "react";
-import {
-  createHashRouter,
-  RouterProvider
-} from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Pages/Layout/Layout";
 import Login from "./Pages/Login/Login";
 import Home from "./Pages/Home/Home";
 import Register from "./Pages/Register/Register";
 import ForgetPass from "./Pages/ForgetPass/ForgetPass";
 import ChangePassword from "./Pages/ResetPass/ResetPass";
-
+import AboutUs from "./Pages/AboutUs/AboutUs";
+import Team from "./Pages/Team/Team";
+import Contact from "./Pages/Contact/Contact";
 const routes = createHashRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
       {
-        path: "/", 
-        element: <Home />,  
+        path: "/",
+        element: <Home />,
       },
       {
         path: "login",
@@ -34,6 +33,18 @@ const routes = createHashRouter([
       {
         path: "changePass",
         element: <ChangePassword />,
+      },
+      {
+        path: "aboutUs",
+        element: <AboutUs />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
+      },
+      {
+        path: "team",
+        element: <Team />,
       },
     ],
   },
