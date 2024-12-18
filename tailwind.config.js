@@ -19,7 +19,7 @@
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}", // يشمل كل ملفات المشروع
-    "./node_modules/tw-elements-react/**/*.js", // تضمين مكتبة tw-elements-react
+    "./node_modules/tw-elements-react/**/*.js", // تضمين مكتبة tw-elements-reactz
   ],
   theme: {
     extend: {

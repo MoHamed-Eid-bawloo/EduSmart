@@ -1,5 +1,5 @@
-import React from "react";
-import { createHashRouter, RouterProvider } from "react-router-dom";
+import React, { useContext } from "react";
+import { Routes, Route } from "react-router-dom";
 import Layout from "./Pages/Layout/Layout";
 import Login from "./Pages/Login/Login";
 import Home from "./Pages/Home/Home";
@@ -9,49 +9,37 @@ import ChangePassword from "./Pages/ResetPass/ResetPass";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import Team from "./Pages/Team/Team";
 import Contact from "./Pages/Contact/Contact";
-const routes = createHashRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "register",
-        element: <Register />,
-      },
-      {
-        path: "forgetPass",
-        element: <ForgetPass />,
-      },
-      {
-        path: "changePass",
-        element: <ChangePassword />,
-      },
-      {
-        path: "aboutUs",
-        element: <AboutUs />,
-      },
-      {
-        path: "contact",
-        element: <Contact />,
-      },
-      {
-        path: "team",
-        element: <Team />,
-      },
-    ],
-  },
-]);
+import { MyContext } from "./context/context";
+import TestAuth from "./Pages/TestAuth";
 
-function App() {
-  return <RouterProvider router={routes} />;
+export default function App() {
+  let {ProtectRoute,ProtectAuth}=useContext(MyContext)
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+
+      <Route path="/" element={<Home />} />
+
+      {/* Protects Routes */}
+      <Route path="" element={<ProtectRoute/>} >
+          <Route path="/success" element={<TestAuth />} />
+          <Route path="/team" element={ <Team />} />
+      </Route>
+
+    {/* Protects Auth */}
+      <Route path="" element={<ProtectAuth/>} >
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/forgetPass" element={<ForgetPass />} />
+        <Route path="/changePass" element={<ChangePassword />} />
+      </Route>
+
+        <Route path="/home" element={<Home />} />
+     
+        <Route path="/aboutUs" element={<AboutUs />} />
+        <Route path="/contact" element={<Contact />} />
+
+      </Route>
+    </Routes>
+  );
 }
-
-export default App;
